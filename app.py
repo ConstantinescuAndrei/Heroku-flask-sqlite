@@ -95,6 +95,11 @@ def delete_product(id):
     db.session.commit()
     return product_schema.jsonify(product)
 
+# Main Route
+@app.route('/')
+def main_route():
+    return 'Hello from flask'
+
 # Run Server
 if __name__ == '__main__':
     app.run(debug=True)

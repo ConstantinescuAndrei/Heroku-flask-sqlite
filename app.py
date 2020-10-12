@@ -96,7 +96,7 @@ def delete_product(id):
     return product_schema.jsonify(product)
 
 # Main Route
-@app.route('/')
+@app.route('/', methods=['GET'])
 def main_route():
     return 'Hello from flask'
 

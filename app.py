@@ -96,9 +96,11 @@ def delete_product(id):
     return product_schema.jsonify(product)
 
 # Main Route
-@app.route('/', methods=['GET'])
+@app.route('/gps_data', methods=['POST'])
 def main_route():
-    return 'Hello from flask'
+    longitude = request.json['longitude']
+    latitude = request.json['latitude']
+    return longitude + ' ' + latitude
 
 # Run Server
 if __name__ == '__main__':
